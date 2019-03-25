@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import StyledComponent from './styles';
 import Button from '../Button';
 
-const WelcomeScreen = () => {
+const WelcomeScreen = (props) => {
+
   return(
     <StyledComponent>
         <h1>SpaceX Launch Data</h1>
@@ -17,9 +18,13 @@ const WelcomeScreen = () => {
           There isn't much more than that to this application ¯\_(ツ)_/¯
         </p>
 
-        <Button>Get going!</Button>
+        <Button onClick={props.proceedToApp}>Get going!</Button>
     </StyledComponent>
   );
+}
+
+WelcomeScreen.propTypes = {
+  proceedToApp: PropTypes.func
 }
 
 export default WelcomeScreen;
