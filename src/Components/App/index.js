@@ -1,13 +1,40 @@
 import React, { Component } from 'react';
 import WelcomeScreen from '../WelcomeScreen/';
-import Button from '../Button';
+
 class App extends Component {
+
+  state = {
+    appActive: false
+  }
+
+  activateApp = () => {
+    this.setState({
+      appActive: true
+    });
+  }
+
+  getLaunches = () => {
+    fetch("https://api.spacexdata.com/v3/launches/")
+    .then(res => res.json())
+    .then(launches => (launches));
+  }
+
+
   render() {
-    return (
-      <div className="App">
-        <WelcomeScreen/>
-      </div>
-    );
+
+    if(this.state.appActive){
+      return (
+        <div className="App">
+          <LaunchList items={getLaunches}/>
+        </div>
+      );
+    }else{
+      return (
+        <WelcomeScreen proceedToApp={this.activateApp}/>
+      );
+    }
+
+    
   }
 }
 
