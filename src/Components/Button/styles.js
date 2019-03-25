@@ -6,6 +6,7 @@ const StyledButton = styled.button`
   font-weight: bold;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 
   background-color: #4286f4;
   color: #fff;
