@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StyledLaunchList from './styles';
+import LaunchItem from '../LaunchItem';
 
 const LaunchList = (props) => {
   return(
     <StyledLaunchList>
         {
-          props.items.map(() => )
+          props.items.map(props => {
+            return <LaunchItem />;
+          })
         }
     </StyledLaunchList>
   );
 }
 
+LaunchList.propTypes = {
+
+}
+
 export default LaunchList;
-
-
-<ul>
-  {elements.map((value, index) => {
-    return <li key={index}>{value}</li>
-  })}
-</ul>
