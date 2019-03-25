@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WelcomeScreen from '../WelcomeScreen/';
+import LaunchList from '../LaunchList';
 
 class App extends Component {
 
@@ -25,7 +26,7 @@ class App extends Component {
     if(this.state.appActive){
       return (
         <div className="App">
-          <LaunchList items={getLaunches}/>
+          <LaunchList items={this.getLaunches()}/>
         </div>
       );
     }else{
