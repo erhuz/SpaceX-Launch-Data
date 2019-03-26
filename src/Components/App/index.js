@@ -18,7 +18,6 @@ class App extends Component {
         appActive: true,
         launches: launches
       })
-      console.log(this.state);
     });
   }
 
