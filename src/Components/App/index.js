@@ -1,31 +1,36 @@
 import React, { Component } from 'react';
 import WelcomeScreen from '../WelcomeScreen/';
+import LaunchList from '../LaunchList';
 
 class App extends Component {
 
   state = {
-    appActive: false
+    appActive: false,
+    launches: {}
   }
 
   activateApp = () => {
-    this.setState({
-      appActive: true
+
+    fetch("https://api.spacexdata.com/v3/launches/")
+    .then(res => res.json())
+    .then(launches => {
+      this.setState({
+        appActive: true,
+        launches: launches
+      })
+      console.log(this.state);
     });
   }
 
-  getLaunches = () => {
-    fetch("https://api.spacexdata.com/v3/launches/")
-    .then(res => res.json())
-    .then(launches => (launches));
-  }
 
 
   render() {
 
     if(this.state.appActive){
+
       return (
         <div className="App">
-          <LaunchList items={getLaunches}/>
+          <LaunchList items={this.state.launches}/>
         </div>
       );
     }else{
@@ -33,8 +38,6 @@ class App extends Component {
         <WelcomeScreen proceedToApp={this.activateApp}/>
       );
     }
-
-    
   }
 }
 
