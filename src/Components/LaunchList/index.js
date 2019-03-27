@@ -10,6 +10,7 @@ const LaunchList = (props) => {
         <tr>
           <th>Flight ID</th>
           <th>Mission Name</th>
+          <th>Upcoming</th>
           <th>Launch Date</th>
         </tr>
       </thead>
@@ -21,6 +22,7 @@ const LaunchList = (props) => {
               key={index}
               flight_number={item.flight_number}
               mission_name={item.mission_name}
+              upcoming={item.upcoming}
               launch_date={item.launch_date_utc}
               />
             )
