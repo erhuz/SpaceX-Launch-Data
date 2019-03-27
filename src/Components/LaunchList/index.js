@@ -12,6 +12,8 @@ const LaunchList = (props) => {
           <th>Mission Name</th>
           <th>Upcoming</th>
           <th>Launch Date</th>
+          <th>Video</th>
+          <th>Mission Patch</th>
         </tr>
       </thead>
       <tbody>
