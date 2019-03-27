@@ -10,8 +10,9 @@ class App extends Component {
   }
 
   activateApp = () => {
+    const api = "https://api.spacexdata.com/v3/launches/";
 
-    fetch("https://api.spacexdata.com/v3/launches/")
+    fetch(api)
     .then(res => res.json())
     .then(launches => {
       this.setState({
@@ -20,8 +21,6 @@ class App extends Component {
       })
     });
   }
-
-
 
   render() {
 
