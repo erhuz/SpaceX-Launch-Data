@@ -19,11 +19,13 @@ const LaunchList = (props) => {
           props.items.map((item, index) => {
             return (
               <LaunchItem
-              key={index}
-              flight_number={item.flight_number}
-              mission_name={item.mission_name}
-              upcoming={item.upcoming}
-              launch_date={item.launch_date_utc}
+                key={index}
+                flight_number={item.flight_number}
+                mission_name={item.mission_name}
+                upcoming={item.upcoming}
+                launch_date={item.launch_date_utc}
+                video_link={item.links.video_link}
+                patch={item.links.mission_patch}
               />
             )
           })

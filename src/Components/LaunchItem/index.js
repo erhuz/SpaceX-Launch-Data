@@ -18,10 +18,12 @@ const LaunchItem = (props) => {
 
   return(
     <StyledLaunchItem >
-        <td>{props.flight_number}</td>
-        <td>{props.mission_name}</td>
-        <td>{upcomingString}</td>
-        <td>{date.toDateString()}</td>
+      <td>{props.flight_number}</td>
+      <td>{props.mission_name}</td>
+      <td>{upcomingString}</td>
+      <td>{date.toDateString()}</td>
+      <td><a href={props.video_link}>Video</a></td>
+      <td><a href={props.patch}>Patch</a></td>
     </StyledLaunchItem>
   );
 }
